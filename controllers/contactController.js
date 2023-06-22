@@ -11,7 +11,37 @@ const getContacts = (req, res) => {
 // @access public at present and later as privste
 
 const createContact = (req, res) => {
-  res.status(200).json({ message: 'contact created' });
+  res.status(201).json({ message: 'contact created' });
 };
 
-module.exports = { getContacts };
+// @description get one contact
+// @route GET /api/contacts
+// @access public at present and later as privste
+
+const getContact = (req, res) => {
+  res.status(200).json({ message: `Get contact for ${req.params.id}` });
+};
+
+// @description update contact
+// @route PUT /api/contacts
+// @access public at present and later as privste
+
+const updateContact = (req, res) => {
+  res.status(200).json({ message: `Update contact for ${req.params.id}` });
+};
+
+// @description delete contact
+// @route Delete /api/contacts
+// @access public at present and later as privste
+
+const deleteContact = (req, res) => {
+  res.status(200).json({ message: `Delete contact for ${req.params.id}` });
+};
+
+module.exports = {
+  getContacts,
+  createContact,
+  getContact,
+  updateContact,
+  deleteContact,
+};
