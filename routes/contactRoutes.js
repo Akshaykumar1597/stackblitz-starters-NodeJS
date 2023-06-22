@@ -8,19 +8,12 @@ const {
 } = require('../controllers/contactController');
 const router = express.Router();
 
-// to get all the contacts
-router.route('/').get(getContacts);
+// deStructuring of routers where with similar end points
 
-// add contact
-router.route('/').post(createContact);
+// to get all the contacts , create contact
+router.route('/').get(getContacts).post(createContact);
 
-// get single contact
-router.route('/:id').get(getContact);
-
-// update contact
-router.route('/:id').put(updateContact);
-
-// delete contact
-router.route('/').delete(deleteContact);
+// get single contact, update contact, delete contact
+router.route('/:id').get(getContact).put(updateContact).delete(deleteContact);
 
 module.exports = router;
