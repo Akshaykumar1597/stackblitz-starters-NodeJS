@@ -1,10 +1,9 @@
 const express = require('express');
+const { getContacts } = require('../controllers/contactController');
 const router = express.Router();
 
 // to get all the contacts
-router.route('/').get((req, res) => {
-  res.status(200).json({ message: 'get all contacts' });
-});
+router.route('/').get(getContacts);
 
 // add contact
 router.route('/').post((req, res) => {
@@ -13,7 +12,7 @@ router.route('/').post((req, res) => {
 
 // get single contact
 router.route('/:id').get((req, res) => {
-  res.status(200).json({ message: `get the contact of ${req.params.id}` });
+  res.status(200).json({  });
 });
 
 // update contact
